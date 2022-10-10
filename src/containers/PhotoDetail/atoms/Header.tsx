@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <View style={styles.headerContainer}>
       <TouchableOpacity style={styles.btnBack} onPress={() => goBack()}>
-        <Image source={require('@assets/close_white.png')} />
+        <Image source={require('../../../../assets/close_white.png')} />
       </TouchableOpacity>
     </View>
   );

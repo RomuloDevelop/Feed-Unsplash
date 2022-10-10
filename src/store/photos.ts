@@ -1,8 +1,8 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {FETCH_STATE} from '@config/enums';
+import {FETCH_STATE} from 'config/enums';
 import {Basic} from 'unsplash-js/dist/methods/photos/types';
-import {getPhotos} from '@services/index';
+import {getPhotos} from 'services/index';
 
 interface PhotosState {
   photos: Basic[];
@@ -51,7 +51,7 @@ export const fetchPhotos = createAsyncThunk(
       return thunkApi.rejectWithValue(null);
     }
     const {results} = response;
-    if (!page) {
+    if (page <= 1) {
       thunkApi.dispatch(setPhotos(results));
     } else {
       thunkApi.dispatch(addPhotos(results));

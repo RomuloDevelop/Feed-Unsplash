@@ -1,5 +1,5 @@
 import {useSelector} from 'react-redux';
-import {RootState} from '@store/index';
+import {RootState} from 'store/index';
 import {Header} from './atoms/Header';
 import {HorizontalList} from './organisms/HorizontalList';
 import {PhotoItem} from './organisms/PhotoItem';

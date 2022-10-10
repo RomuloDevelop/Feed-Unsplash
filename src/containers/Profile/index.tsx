@@ -1,16 +1,16 @@
 import {useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Basic} from 'unsplash-js/dist/methods/users/types';
-import {FETCH_STATE} from '@config/enums';
-import {Feed} from '@components/Feed';
-import {Loader} from '@components/Loader';
-import {usePhotosPaginator} from '@hooks/usePaginator';
-import {RootState} from '@store/index';
-import {fetchUserPhotos} from '@store/user';
+import {FETCH_STATE} from 'config/enums';
+import {Feed} from 'components/Feed';
+import {Loader} from 'components/Loader';
+import {usePhotosPaginator} from 'hooks/usePaginator';
+import {RootState} from 'store/index';
+import {fetchUserPhotos} from 'store/user';
 import {Header} from './atoms/Header';
 import {Title} from './atoms/Title';
 import {ProfileContainer} from './molecules/ProfileContainer';
-import {useGetPhotos} from '@hooks/useGetPhotos';
+import {useGetPhotos} from 'hooks/useGetPhotos';
 
 export const Profile = () => {
   const {user, loading, photos} = useGetPhotos('user') as RootState['user'];

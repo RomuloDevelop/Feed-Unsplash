@@ -21,14 +21,6 @@ const fadeInTitle = {
     top: 40,
     opacity: 0.3,
   },
-  0.4: {
-    top: 0,
-    opacity: 0.6,
-  },
-  0.8: {
-    top: 20,
-    opacity: 0.9,
-  },
   1: {
     top: 0,
     opacity: 1,

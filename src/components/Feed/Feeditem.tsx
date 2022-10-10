@@ -7,7 +7,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import {ANIMATION_DURATION} from './config';
-import {DEVICE_WIDTH} from '@config/sizes';
+import {DEVICE_WIDTH} from 'config/sizes';
 
 type Props = {
   onPress: TouchableOpacityProps['onPress'];

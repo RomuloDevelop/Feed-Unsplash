@@ -5,18 +5,18 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Completeness */
+    "target": "esnext",
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-        "@src/*": ["/src/*"],
-        "@components/*": ["src/components/*"],
-        "@config/*": ["src/config/*"],
-        "@containers/*": ["src/containers/*"],
-        "@hooks/*": ["src/hooks/*"],
-        "@services/*": ["src/services/*"],
-        "@navigation/*": ["src/navigation/*"],
-        "@store/*": ["src/store/*"],
-        "@assets/*": ["assets/*"]
+        "components/*": ["src/components/*"],
+        "config/*": ["src/config/*"],
+        "containers/*": ["src/containers/*"],
+        "hooks/*": ["src/hooks/*"],
+        "services/*": ["src/services/*"],
+        "navigation/*": ["src/navigation/*"],
+        "store/*": ["src/store/*"],
+        "assets/*": ["assets/*"]
     },                             /* Skip type checking all .d.ts files. */
   }
 }

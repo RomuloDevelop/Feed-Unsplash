@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {Image, View} from 'react-native-animatable';
-import {Loader} from '@components/Loader';
-import {DEVICE_HEIGHT, DEVICE_WIDTH} from '@config/sizes';
+import {Loader} from 'components/Loader';
+import {DEVICE_HEIGHT, DEVICE_WIDTH} from 'config/sizes';
 
 type Props = {
   children: JSX.Element;

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {DEVICE_WIDTH} from '@config/sizes';
+import {DEVICE_WIDTH} from 'config/sizes';
 
 type Props = {children: string};
 
