@@ -1,5 +1,4 @@
 import {
-  Dimensions,
   Image,
   StyleSheet,
   TouchableOpacity,
@@ -8,6 +7,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import {ANIMATION_DURATION} from './config';
+import {DEVICE_WIDTH} from '../../config/sizes';
 
 type Props = {
   onPress: TouchableOpacityProps['onPress'];
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: 15,
     overflow: 'hidden',
-    width: Dimensions.get('window').width / 2 - 26 * 1.5,
+    width: DEVICE_WIDTH / 2 - 26 * 1.5,
     aspectRatio: 151 / 218,
   },
   listContainer: {
@@ -82,17 +82,17 @@ const styles = StyleSheet.create({
     bottom: 0,
     paddingHorizontal: 12,
     paddingTop: 19,
-    paddingBottom: 9,
+    paddingBottom: 12,
   },
   title: {
-    fontSize: 12,
+    fontSize: 14,
     color: 'white',
-    lineHeight: 14,
+    marginBottom: 5,
   },
   likes: {
-    fontSize: 8,
-    lineHeight: 9.4,
+    fontSize: 10,
     color: 'white',
+    opacity: 0.65,
   },
 });
 

@@ -1,17 +1,30 @@
 import {useCallback, useRef} from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {
+  Animated,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
+  StyleSheet,
+} from 'react-native';
 import {Basic} from 'unsplash-js/dist/methods/photos/types';
 import {ANIMATION_DURATION} from './config';
 import {FeedItem} from './Feeditem';
 
 type Props = {
   data: Basic[];
-  onPress: (id: number | string) => void;
   onEndReached: () => void;
+  onScroll?: (event: NativeSyntheticEvent<NativeScrollEvent>) => void;
+  scrollIndicatorInsetTop?: number;
+  onPress?: (id: number | string) => void;
   header?: () => JSX.Element;
 };
 
-export const Feed = ({data, onPress, onEndReached, header}: Props) => {
+export const Feed = ({
+  data,
+  onPress,
+  onEndReached,
+  onScroll,
+  header,
+}: Props) => {
   const lastDataIndex = useRef<number>(0);
   const delayBase = useRef<number>(0);
 
@@ -21,7 +34,8 @@ export const Feed = ({data, onPress, onEndReached, header}: Props) => {
   }, [onEndReached]);
 
   return (
-    <FlatList
+    <Animated.FlatList
+      onScroll={onScroll}
       ListHeaderComponent={header}
       style={styles.container}
       contentContainerStyle={styles.listContainer}
@@ -45,7 +59,7 @@ export const Feed = ({data, onPress, onEndReached, header}: Props) => {
         lastDataIndex.current = index;
         return (
           <FeedItem
-            onPress={() => onPress(item.id)}
+            onPress={() => onPress?.(item.id)}
             customStyles={marginTopRight}
             imageUri={item.urls.small}
             description={description}

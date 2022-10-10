@@ -7,29 +7,26 @@ import {useNavigation} from '@react-navigation/native';
 import {Loader} from '../../components/loader';
 import {Feed} from '../../components/Feed';
 import {PHOTO_DETAIL} from '../../navigation/routes';
+import {usePhotosPaginator} from '../../hooks/usePaginator';
 
 export const DiscoverPhotos = () => {
   const navigation = useNavigation();
-  const [page, setPage] = useState(0);
+  const addPage = usePhotosPaginator((page: number) => fetchPhotos(page));
   const dispatch = useDispatch<AppDispatch>();
   const {photos, loading} = useSelector((state: RootState) => state.photos);
 
-  useEffect(() => {
-    dispatch(fetchPhotos(page));
-  }, [dispatch, page, navigation]);
-
   const onPressItem = (photoId: number | string) => {
     dispatch(setPhotoShowed(photoId));
-    navigation.navigate(PHOTO_DETAIL, {});
+    navigation.navigate(PHOTO_DETAIL);
   };
 
   const addNewPage = useCallback(() => {
-    if (!loading && page < 12) {
-      setPage(page + 1);
+    if (!loading) {
+      addPage();
     }
-  }, [loading, page]);
+  }, [loading, addPage]);
 
-  if (loading && !page) {
+  if (loading && !photos?.length) {
     return <Loader />;
   }
 
