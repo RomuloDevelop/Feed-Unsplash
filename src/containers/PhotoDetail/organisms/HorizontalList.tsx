@@ -21,13 +21,11 @@ export const HorizontalList = ({
   data = [],
   renderItem,
 }: Props) => {
-  console.log('initialScrollIndex', initialScrollIndex);
   const listRef = useRef<any>(null);
   const nextIndex = useRef<number | null>(null);
 
   const onViewableItemsChanged: ViewabilityConfigCallbackPair['onViewableItemsChanged'] =
     event => {
-      console.log('changed', event.changed);
       nextIndex.current = event.changed[0].index;
     };
 

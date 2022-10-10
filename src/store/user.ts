@@ -1,5 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {createAsyncThunk} from '@reduxjs/toolkit';
+import {FETCH_STATE} from '../config/enums';
 import {Basic as BasicPhoto} from 'unsplash-js/dist/methods/photos/types';
 import {Basic} from 'unsplash-js/dist/methods/users/types';
 import {getUserPhotos} from '../services';
@@ -7,13 +8,13 @@ import {getUserPhotos} from '../services';
 interface UserState {
   user: Basic | null;
   photos: BasicPhoto[];
-  loading: boolean;
+  loading: FETCH_STATE;
 }
 
 const initialState: UserState = {
   user: null,
   photos: [],
-  loading: false,
+  loading: FETCH_STATE.IDLE,
 };
 
 const userSlice = createSlice({
@@ -32,13 +33,13 @@ const userSlice = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(fetchUserPhotos.pending, state => {
-      state.loading = true;
+      state.loading = FETCH_STATE.PENDING;
     });
     builder.addCase(fetchUserPhotos.fulfilled, state => {
-      state.loading = false;
+      state.loading = FETCH_STATE.SUCCEEDED;
     });
     builder.addCase(fetchUserPhotos.rejected, state => {
-      state.loading = false;
+      state.loading = FETCH_STATE.FAILED;
     });
   },
 });
@@ -46,10 +47,12 @@ const userSlice = createSlice({
 export const fetchUserPhotos = createAsyncThunk(
   'photos/fetchUserPhotos',
   async (params: {page: number; username: string}, thunkApi) => {
-    console.log(params);
     const {page, username} = params;
     const response = await getUserPhotos(page, username);
-    const results = response?.results || [];
+    if (!response || !response?.results?.length) {
+      return thunkApi.rejectWithValue(null);
+    }
+    const {results} = response;
     if (!page) {
       thunkApi.dispatch(setUserPhotos(results));
     } else {

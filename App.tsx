@@ -11,11 +11,15 @@
 import {Provider} from 'react-redux';
 import {store} from './src/store';
 import {Routes} from './src/navigation';
+import Toast from 'react-native-toast-message';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Routes />
+      <>
+        <Routes />
+        <Toast />
+      </>
     </Provider>
   );
 };

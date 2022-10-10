@@ -14,5 +14,6 @@ export const getUserPhotos = async (page: number, username: string) => {
     return result.response;
   } catch (err) {
     console.error(err);
+    return false;
   }
 };

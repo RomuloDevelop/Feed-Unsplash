@@ -9,5 +9,6 @@ export const getPhotos = async (page: number) => {
     return result.response;
   } catch (err) {
     console.error(err);
+    return false;
   }
 };

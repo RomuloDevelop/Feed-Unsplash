@@ -26,7 +26,7 @@ $ cd ./ios
 $ pod install
 ```
 
-Then can run the project executing the following command:
+Then you can run the project executing the following command:
 
 ```bash
 $ yarn ios
