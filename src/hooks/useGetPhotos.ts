@@ -1,8 +1,8 @@
 import {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import Toast from 'react-native-toast-message';
-import {FETCH_STATE} from '../config/enums';
-import {RootState} from '../store';
+import {FETCH_STATE} from '@config/enums';
+import {RootState} from '@store/index';
 
 export const useGetPhotos = (reduceKey: 'user' | 'photos') => {
   const {loading, ...params} = useSelector(

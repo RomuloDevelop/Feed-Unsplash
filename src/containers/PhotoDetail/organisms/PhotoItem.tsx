@@ -1,18 +1,18 @@
+import {useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import {useDispatch} from 'react-redux';
 import {Basic as BasicPhoto} from 'unsplash-js/dist/methods/photos/types';
-import {PROFILE} from '../../../navigation/routes';
-import {AppDispatch} from '../../../store';
-import {fetchUserPhotos, setUser} from '../../../store/user';
+import {PROFILE} from '@navigation/routes';
+import {AppDispatch} from '@store/index';
+import {setUser} from '@store/user';
 import {Title} from '../atoms/Title';
 import {INFO_ANIMATION_DURATION, INFO_HEIGHT} from '../config';
 import {Likes} from '../atoms/Likes';
 import {ProfileInfo} from '../molecules/ProfileInfo';
 import {PhotoContainer} from '../molecules/PhotoContainer';
-import {useState} from 'react';
 
 type Props = {activeAnimation: boolean; photo: BasicPhoto};
 

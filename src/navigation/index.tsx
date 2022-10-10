@@ -1,11 +1,10 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {DiscoverPhotos} from '../containers/DiscoverPhotos';
-import {PhotoDetail} from '../containers/PhotoDetail';
-import {Profile} from '../containers/Profile';
+import {DiscoverPhotos} from '@containers/DiscoverPhotos';
+import {PhotoDetail} from '@containers/PhotoDetail';
+import {Profile} from '@containers/Profile';
 import {DISCOVER_PHOTOS, PHOTO_DETAIL, PROFILE} from './routes';
 import {HeaderDiscover} from './components/HeaderDiscover';
-import {Text, View} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 

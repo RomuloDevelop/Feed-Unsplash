@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {DEVICE_WIDTH} from '../../../config/sizes';
+import {DEVICE_WIDTH} from '@config/sizes';
 import {INFO_ANIMATION_DURATION, TITLE_ANIMATION_DURATION} from '../config';
 
 type Props = {activeAnimation: boolean; children: string};

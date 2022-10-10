@@ -8,14 +8,15 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-        "src/*": ["/src/*"],
-        "components/*": ["/src/components/r*"],
-        "config/*": ["/src/config/*"],
-        "containers/*": ["/src/containers/_shared/*"],
-        "hooks/*": ["/src/hooks/*"],
-        "services/*": ["/src/services/*"],
-        "store/*": ["/src/store/*"],
-        "assets/*": ["/assets/*"]
+        "@src/*": ["/src/*"],
+        "@components/*": ["src/components/*"],
+        "@config/*": ["src/config/*"],
+        "@containers/*": ["src/containers/*"],
+        "@hooks/*": ["src/hooks/*"],
+        "@services/*": ["src/services/*"],
+        "@navigation/*": ["src/navigation/*"],
+        "@store/*": ["src/store/*"],
+        "@assets/*": ["assets/*"]
     },                             /* Skip type checking all .d.ts files. */
   }
 }

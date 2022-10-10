@@ -1,8 +1,8 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {FETCH_STATE} from '../config/enums';
+import {FETCH_STATE} from '@config/enums';
 import {Basic} from 'unsplash-js/dist/methods/photos/types';
-import {getPhotos} from '../services';
+import {getPhotos} from '@services/index';
 
 interface PhotosState {
   photos: Basic[];

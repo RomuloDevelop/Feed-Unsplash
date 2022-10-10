@@ -1,9 +1,9 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {FETCH_STATE} from '../config/enums';
+import {FETCH_STATE} from '@config/enums';
 import {Basic as BasicPhoto} from 'unsplash-js/dist/methods/photos/types';
 import {Basic} from 'unsplash-js/dist/methods/users/types';
-import {getUserPhotos} from '../services';
+import {getUserPhotos} from '@services/index';
 
 interface UserState {
   user: Basic | null;

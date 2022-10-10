@@ -1,15 +1,15 @@
 import {useCallback} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useDispatch} from 'react-redux';
-import {AppDispatch, RootState} from '../../store';
-import {fetchPhotos, setPhotoShowed} from '../../store/photos';
+import {AppDispatch, RootState} from '@store/index';
+import {fetchPhotos, setPhotoShowed} from '@store/photos';
 import {useNavigation} from '@react-navigation/native';
-import {Loader} from '../../components/loader';
-import {Feed} from '../../components/Feed';
-import {PHOTO_DETAIL} from '../../navigation/routes';
-import {usePhotosPaginator} from '../../hooks/usePaginator';
-import {FETCH_STATE} from '../../config/enums';
-import {useGetPhotos} from '../../hooks/useGetPhotos';
+import {Loader} from '@components/Loader';
+import {Feed} from '@components/Feed';
+import {PHOTO_DETAIL} from '@navigation/routes';
+import {usePhotosPaginator} from '@hooks/usePaginator';
+import {FETCH_STATE} from '@config/enums';
+import {useGetPhotos} from '@hooks/useGetPhotos';
 
 export const DiscoverPhotos = () => {
   const navigation = useNavigation();

@@ -6,7 +6,7 @@ import {
   ViewabilityConfigCallbackPairs,
 } from 'react-native';
 import {Basic} from 'unsplash-js/dist/methods/photos/types';
-import {DEVICE_WIDTH} from '../../../config/sizes';
+import {DEVICE_WIDTH} from '@config/sizes';
 
 type Props = {
   initialScrollIndex: number;

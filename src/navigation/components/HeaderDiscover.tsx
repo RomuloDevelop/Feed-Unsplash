@@ -10,7 +10,7 @@ export const HeaderDiscover = ({
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <Image source={require('../../../assets/lines.png')} />
+        <Image source={require('@assets/lines.png')} />
       </View>
       <Animatable.Text
         duration={800}

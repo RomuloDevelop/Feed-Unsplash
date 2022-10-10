@@ -3,7 +3,7 @@ import {AsyncThunkAction} from '@reduxjs/toolkit';
 import {useCallback, useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {Basic} from 'unsplash-js/dist/methods/photos/types';
-import {AppDispatch} from '../store';
+import {AppDispatch} from '@store/index';
 
 export const usePhotosPaginator = (
   fetchPhotosAction: (page: number) => AsyncThunkAction<Basic[], any, {}>,
